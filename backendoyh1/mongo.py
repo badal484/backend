@@ -1,5 +1,11 @@
 from mongoengine import connect
-from django.conf import settings
+import os
 
 def init_mongo():
-    connect(host=settings.MONGO_URI)
+    connect(
+        db="oyhdb",
+        host=os.environ.get("MONGO_URI"),
+        alias="default",
+        uuidRepresentation="standard"
+    )
+

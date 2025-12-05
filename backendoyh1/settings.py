@@ -93,7 +93,16 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 # MongoDB
 MONGO_URI = os.getenv("MONGO_URI")
 
+from mongoengine import connect
+import os
 
+def init_mongo():
+    connect(
+        db="oyhdb",
+        host=os.environ.get("MONGO_URI"),
+        alias="default",
+        uuidRepresentation="standard"
+    )
 
 # Password validation (still needed for Django admin auth)
 AUTH_PASSWORD_VALIDATORS = [
