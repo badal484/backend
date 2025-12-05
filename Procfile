@@ -1,1 +1,1 @@
-web: gunicorn backendoyh1.wsgi
+web: gunicorn backendoyh1.wsgi:application

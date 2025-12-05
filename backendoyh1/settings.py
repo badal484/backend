@@ -92,7 +92,7 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 # MongoDB
 MONGO_URI = os.getenv("MONGO_URI")
-connect(host=MONGO_URI)
+
 
 
 # Password validation (still needed for Django admin auth)
